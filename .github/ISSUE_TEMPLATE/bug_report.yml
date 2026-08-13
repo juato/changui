@@ -1,0 +1,41 @@
+name: 🐛 Bug Report
+description: Create a report to help us fix a bug in Changui
+title: "[BUG] "
+labels: ["bug"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report a bug!
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps To Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Run 'changui' in project directory X
+        2. Press key 'f' to search
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: A clear and concise description of what you expected to happen.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment Details
+      description: Node.js version, OS, Terminal emulator (e.g. Node v20.10.0, macOS Sonoma, Alacritty)
+    validations:
+      required: false
