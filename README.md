@@ -1,6 +1,6 @@
 # Changui ⚙️ VISUALIZADOR DE CAMBIOS
 
-**Changui** es una herramienta de interfaz de línea de comandos (CLI TUI) que facilita la visualización de cambio en tu proyecto, ideal para desarrolladores que trabajan en Monorepos y proyectos con arquitectura en capas.
+**Changui** es una herramienta de interfaz de línea de comandos (CLI TUI) que facilita la visualización de cambios en tu proyecto, ideal para desarrolladores que trabajan en Monorepos y proyectos con arquitectura en capas.
 
 A diferencia de `git status` o herramientas tradicionales que listan archivos modificados de forma plana, **Changui** mapea y visualiza los cambios de Git organizados según la estructura arquitectónica del proyecto (Apps, Paquetes compartidos, Capas, Directorios y archivos de configuración agrupados).
 

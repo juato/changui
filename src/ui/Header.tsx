@@ -1,32 +1,51 @@
 import React from 'react';
 import { Box, Text } from 'ink';
-import chalk from 'chalk';
-import { ArchitecturalTree } from '../core/types.js';
+import { Language, translations } from '../core/i18n/translations.js';
 
 interface HeaderProps {
-  tree: ArchitecturalTree;
+  isSearchOpen: boolean;
+  searchQuery: string;
+  displayItemsCount: number;
+  editorName: string;
+  focusedPanel: 'left' | 'right';
+  language: Language;
 }
 
-export const Header: React.FC<HeaderProps> = ({ tree }) => {
-  const { stats } = tree;
+export const Header: React.FC<HeaderProps> = ({
+  isSearchOpen,
+  searchQuery,
+  displayItemsCount,
+  editorName,
+  focusedPanel,
+  language,
+}) => {
+  const t = translations[language];
 
   return (
-    <Box flexDirection="column" marginBottom={1}>
-      <Box borderStyle="round" borderColor="cyan" paddingX={1}>
-        <Text bold color="cyan">
-          CHANGUI 🛠️ Architecture Git Status
-        </Text>
-      </Box>
-
-      <Box gap={2} marginTop={1}>
-        <Text bold>Summary:</Text>
-        <Text color="green">Staged: {stats.stagedCount}</Text>
-        <Text color="yellow">Unstaged: {stats.unstagedCount}</Text>
-        <Text color="gray">Untracked: {stats.untrackedCount}</Text>
-        <Text color="white" bold>
-          Total: {stats.totalChanges}
-        </Text>
-      </Box>
+    <Box height={1} paddingX={1} justifyContent="space-between" overflow="hidden">
+      {isSearchOpen ? (
+        <Box gap={1}>
+          <Text bold color="yellow">
+            🔍 {t.search.prompt}
+          </Text>
+          <Text color="white" bold>
+            {searchQuery}_
+          </Text>
+          <Text color="gray">
+            ({t.search.matches}: {displayItemsCount}) {t.search.escToExit}
+          </Text>
+        </Box>
+      ) : (
+        <>
+          <Text bold color="cyan" wrap="truncate-end">
+            {t.header.title}
+          </Text>
+          <Text color="gray">
+            {t.header.editor}: {editorName.toUpperCase()} | {t.header.focus}: {focusedPanel.toUpperCase()}
+          </Text>
+        </>
+      )}
     </Box>
   );
 };
+
