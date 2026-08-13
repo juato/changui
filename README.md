@@ -4,6 +4,9 @@
 
 A diferencia de `git status` o herramientas tradicionales que listan archivos modificados de forma plana, **Changui** mapea y visualiza los cambios de Git organizados según la estructura arquitectónica del proyecto (Apps, Paquetes compartidos, Capas, Directorios y archivos de configuración agrupados).
 
+<img width="1423" height="730" alt="image" src="https://github.com/user-attachments/assets/a1c443c5-f97e-4c0c-9dea-83b25dbfbbf2" />
+
+
 ---
 
 ## 🚀 Características Principales
