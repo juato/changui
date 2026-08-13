@@ -1,3 +1,7 @@
+🌐 **Language / Idioma**: **English** | [Español (Argentina)](CONTRIBUTING.es-AR.md)
+
+---
+
 # Contributing to Changui ⚙️
 
 Thank you for your interest in contributing to **Changui**! We welcome contributions from developers of all experience levels.
@@ -31,9 +35,9 @@ This document provides a set of guidelines and instructions for contributing to 
    npm run dev
    ```
 
-4. **Run the Test Suite**:
-   We use [Vitest](https://vitest.dev/) for unit testing.
+4. **Run Typecheck & Tests**:
    ```bash
+   npm run typecheck
    npm test
    ```
 
@@ -69,7 +73,7 @@ src/
 ## 🧪 Testing Guidelines
 
 - Every core mapping logic, Git utility, or configuration feature should be covered by unit tests in the `tests/` directory.
-- Run `npm test` before pushing your changes to verify all tests pass.
+- Run `npm run typecheck && npm test` before pushing your changes to verify code types and tests pass.
 
 ---
 

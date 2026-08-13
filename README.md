@@ -1,32 +1,35 @@
-# Changui ⚙️ VISUALIZADOR DE CAMBIOS
+🌐 **Language / Idioma**: **English** | [Español (Argentina)](README.es-AR.md)
 
-**Changui** es una herramienta de interfaz de línea de comandos (CLI TUI) que facilita la visualización de cambios en tu proyecto, ideal para desarrolladores que trabajan en Monorepos y proyectos con arquitectura en capas.
+---
 
-A diferencia de `git status` o herramientas tradicionales que listan archivos modificados de forma plana, **Changui** mapea y visualiza los cambios de Git organizados según la estructura arquitectónica del proyecto (Apps, Paquetes compartidos, Capas, Directorios y archivos de configuración agrupados).
+# Changui ⚙️ GIT CHANGE VISUALIZER
+
+**Changui** is a Terminal User Interface (CLI TUI) tool that visualizes Git changes organized by project architecture. It is ideal for developers working in Monorepos and layered architectural codebases.
+
+Unlike `git status` or traditional tools that present modified files in a flat list, **Changui** maps and groups Git changes according to your project's architectural structure (Apps, Shared Packages, Layers, Directories, and grouped configuration files).
 
 <img width="1423" height="730" alt="image" src="https://github.com/user-attachments/assets/a1c443c5-f97e-4c0c-9dea-83b25dbfbbf2" />
 
+---
+
+## 🚀 Key Features
+
+- **Smart Architecture Tree**: Automatically detects monorepos (`pnpm-workspace.yaml`, `workspaces`, `tsconfig` references) and groups noise files (`package-lock.json`, `tsconfig.json`, `.gitignore`) under a virtual `[configs]` node.
+- **Automatic Tech Stack Detection**: Identifies frameworks and tools (**Next.js**, **Astro**, **React**, **Vue**, **NestJS**, **TypeScript**, **TailwindCSS**, etc.) along with their exact versions.
+- **Integrated Git Diff Viewer**: Inspect added (+), deleted (-), and modified diff lines with full vertical scrolling.
+- **In-Situ Live Search (`f`)**: Filter the file tree in real-time without closing UI panels.
+- **Code Editor Integration (`[ENTER]`)**: Open the selected file directly in your preferred editor (**VS Code**, **Cursor**, **Neovim**, **Sublime Text**, **WebStorm**).
+- **Persistent Settings & Multi-Language (`s`)**: Save your preferred code editor and interface language (**English** or **Argentine Spanish**).
 
 ---
 
-## 🚀 Características Principales
+## 📦 Installation
 
-- **Árbol de Arquitectura Inteligente**: Clasifica automáticamente monorepos (`pnpm-workspace.yaml`, `workspaces`, `tsconfig` references) y agrupa archivos de ruido (`package-lock.json`, `tsconfig.json`, `.gitignore`) bajo un nodo virtual `[configs]`.
-- **Detección Automática de Tech Stack**: Identifica frameworks y herramientas en uso (**Next.js**, **Astro**, **React**, **Vue**, **NestJS**, **TypeScript**, **TailwindCSS**, etc.) con sus versiones exactas.
-- **Visor de Diff de Git Integrado**: Permite ver líneas agregadas (+), eliminadas (-) y bloques de diff con scroll vertical completo.
-- **Buscador Directo In-Situ (`f`)**: Filtra el árbol de archivos en tiempo real sin ocultar los paneles de la interfaz.
-- **Integración con Editores de Código (`[ENTER]`)**: Abre el archivo seleccionado directamente en tu editor preferido (**VS Code**, **Cursor**, **Neovim**, **Sublime Text**, **WebStorm**).
-- **Configuración Persistente y Multidioma (`s`)**: Permite cambiar y guardar tu editor preferido e idioma de la interfaz (**English** o **Español Argentino**).
+### Prerequisites
+- **Node.js**: `v20.0.0` or higher
+- **Git**: Installed and available in your `PATH`
 
----
-
-## 📦 Instalación
-
-### Requisitos Previos
-- **Node.js**: `v20.0.0` o superior.
-- **Git**: Instalado y disponible en el `PATH`.
-
-### Instalación Global (desde el código fuente)
+### Global Installation (from source)
 ```bash
 git clone https://github.com/juato/changui.git
 cd changui
@@ -35,53 +38,68 @@ npm run build
 npm link
 ```
 
-Una vez enlazado globalmente, podés ejecutar `changui` en cualquier directorio que sea un repositorio de Git.
+Once linked globally, you can run `changui` inside any Git repository directory.
 
 ---
 
-## 🎮 Guía de Uso y Controles
+## 🎮 Controls & Usage Guide
 
-Para lanzar el HUD interactivo en cualquier repositorio:
+To launch the interactive HUD inside any repository:
 ```bash
 changui
 ```
 
-### Accesos Rápidos de Teclado (Hotkeys)
+### Hotkeys & Shortcuts
 
-| Tecla | Acción |
+| Key | Action |
 |---|---|
-| `[Arriba]` / `[Abajo]` | Navegar entre nodos y archivos del árbol. |
-| `[ESPACIO]` | Expandir o colapsar carpetas/nodos de arquitectura. |
-| `[ENTER]` | Abrir el archivo seleccionado en el editor de código configurado. |
-| `[TAB]` | Alternar foco entre el Panel de Arquitectura (izq) y el Visor de Diff (der). |
-| `f` | Activar la barra de búsqueda en tiempo real. |
-| `s` | Abrir el menú de configuración (Editor e Idioma). |
-| `[ESC]` | Cancelar la búsqueda activa o cerrar el menú de configuración. |
-| `q` | Salir de la aplicación. |
+| `[Up]` / `[Down]` | Navigate through tree nodes and files |
+| `[SPACE]` | Expand or collapse folder/architecture nodes |
+| `[ENTER]` | Open selected file in your configured editor |
+| `[TAB]` | Toggle focus between Architecture Tree (left) and Diff Viewer (right) |
+| `f` | Open real-time search bar |
+| `s` | Open settings menu (Editor & Language) |
+| `[ESC]` | Cancel active search or close settings menu |
+| `q` | Quit application |
 
 ---
 
-## ⚙️ Modos y Opciones CLI
+## ⚙️ CLI Modes & Options
 
 ```bash
-# Ejecutar HUD interactivo en el directorio actual
+# Launch interactive HUD in current directory
 changui
 
-# Obtener la estructura arquitectónica y cambios de Git en formato JSON
+# Export architectural structure and Git changes in JSON format
 changui --json
 
-# Ver la versión de Changui
+# Display Changui version
 changui --version
 ```
 
 ---
 
-## 🧪 Pruebas y Desarrollo
+## 🧪 Testing & Development
 
 ```bash
-# Ejecutar la suite de tests unitarios
+# Run TypeScript type check
+npm run typecheck
+
+# Run unit test suite with Vitest
 npm test
 
-# Compilar el ejecutable de producción con tsup
+# Build production executable with tsup
 npm run build
 ```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Check out our [CONTRIBUTING.md](CONTRIBUTING.md) guide (or [CONTRIBUTING.es-AR.md](CONTRIBUTING.es-AR.md)) to learn how to set up the repository and submit Pull Requests.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for the official text and [LICENSE.es-AR.md](LICENSE.es-AR.md) for the Argentine Spanish translation.
