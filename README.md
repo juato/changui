@@ -8,7 +8,8 @@
 
 Unlike `git status` or traditional tools that present modified files in a flat list, **Changui** maps and groups Git changes according to your project's architectural structure (Apps, Shared Packages, Layers, Directories, and grouped configuration files).
 
-<img width="1423" height="730" alt="image" src="https://github.com/user-attachments/assets/a1c443c5-f97e-4c0c-9dea-83b25dbfbbf2" />
+<img width="1425" height="711" alt="image" src="https://github.com/user-attachments/assets/36fef18d-d227-403c-830c-5cf2b3299abf" />
+
 
 ---
 
